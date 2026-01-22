@@ -98,6 +98,23 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.03);
         }
+
+        /* Scrollbar-ды жасыру */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: float 3s infinite ease-in-out;
+        }
     </style>
 <script type="importmap">
 {
@@ -116,5 +133,8 @@
     <div class="blob blob-1"></div>
     <div class="blob blob-2" style="animation-delay: -12s;"></div>
     <div id="root"></div>
+    
+    <!-- Vite entry point: index.tsx файлын модуль ретінде қосамыз -->
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
